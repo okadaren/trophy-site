@@ -51,13 +51,14 @@ function renderGrid() {
   items.forEach((item) => {
     const a = document.createElement("a");
     a.className = "card";
-    a.href = "viewer.html?id=" + item.id;
+    a.href = "viewer.html?id=" + item.id.toString();
 
     const thumb = document.createElement("div");
     thumb.className = "card-thumb";
     const img = document.createElement("img");
     img.className = "card-thumb-image";
     img.alt = item.name;
+    img.src = item.image;
     img.loading = "lazy";
     img.decoding = "async";
     thumb.appendChild(img);

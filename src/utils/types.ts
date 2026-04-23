@@ -2,13 +2,12 @@ export type Category = "flag" | "plaque" | "trophy" | "ball" | "monument" | "cer
 export type Filter = Category | "all";
 
 export interface Prize {
-  id: string;
+  id: number;
   name: string;
-  shortName: string;
   date: string;
   category: Category;
-  achievement: string;
   event: string;
   recipient: string;
   description: string;
+  image: string;
 }

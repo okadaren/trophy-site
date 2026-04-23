@@ -56,7 +56,7 @@ function getPrizeIdFromQuery(): string | null {
   return urlParams.get("id");
 }
 
-function renderPanel(fields: PanelFields, prizeId: string) {
+function renderPanel(fields: PanelFields, prizeId: number) {
   const item = PRIZES.find((prize) => prize.id === prizeId);
   if (!item) return;
 
@@ -73,7 +73,7 @@ function initPanel() {
   const fields = getPanelFields();
   if (!(prizeId && fields)) return;
 
-  renderPanel(fields, prizeId);
+  renderPanel(fields, Number(prizeId));
 }
 
 initPanelToggle();
