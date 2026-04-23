@@ -2,11 +2,12 @@ import { defineConfig } from "vite";
 
 export default defineConfig({
   base: "./",
+  root: "./src",
   build: {
     rolldownOptions: {
       input: {
-        main: "index.html",
-        viewer: "viewer.html",
+        index: "src/index.html",
+        viewer: "src/viewer.html",
       },
     },
   },

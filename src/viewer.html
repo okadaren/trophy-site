@@ -18,7 +18,7 @@
       type="module"
       src="https://cdn.jsdelivr.net/npm/@playcanvas/web-components@latest/dist/pwc.mjs"
     ></script>
-    <link rel="stylesheet" href="src/viewer.css" />
+    <link rel="stylesheet" href="viewer.css" />
     <style>
       @import url("https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=DM+Sans:wght@300;400;500&display=swap");
     </style>
@@ -67,9 +67,9 @@
       <pc-asset
         src="https://cdn.jsdelivr.net/npm/playcanvas/scripts/esm/camera-controls.mjs"
       ></pc-asset>
-      <pc-asset id="toy" src="https://developer.playcanvas.com/assets/toy-cat.sog"></pc-asset>
+      <pc-asset lazy id="toy" src="https://developer.playcanvas.com/assets/toy-cat.sog"></pc-asset>
       <pc-scene>
-        <pc-entity position="0 0 2.5">
+        <pc-entity position="-0.15 -0.35 6">
           <pc-camera clear-color="#0a0c12"></pc-camera>
           <pc-scripts>
             <pc-script name="cameraControls"></pc-script>
@@ -81,5 +81,5 @@
       </pc-scene>
     </pc-app>
   </body>
-  <script type="module" src="/src/viewer.ts"></script>
+  <script type="module" src="viewer.ts"></script>
 </html>

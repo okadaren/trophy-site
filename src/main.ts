@@ -51,7 +51,7 @@ function renderGrid() {
   items.forEach((item) => {
     const a = document.createElement("a");
     a.className = "card";
-    a.href = "viewer?id=" + item.id;
+    a.href = "viewer.html?id=" + item.id;
 
     const thumb = document.createElement("div");
     thumb.className = "card-thumb";
