@@ -1,4 +1,4 @@
-import data from "../assets/results.json";
+import data from "../assets/models.json";
 import type { Category, Filter, Prize } from "./types";
 export const CATEGORIES: Filter[] = [
   "all",
