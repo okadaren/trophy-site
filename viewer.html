@@ -1,0 +1,85 @@
+<!doctype html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"
+    />
+    <title>My PlayCanvas Web Components App</title>
+    <script type="importmap">
+      {
+        "imports": {
+          "playcanvas": "https://cdn.jsdelivr.net/npm/playcanvas@latest/build/playcanvas.mjs"
+        }
+      }
+    </script>
+    <script
+      type="module"
+      src="https://cdn.jsdelivr.net/npm/@playcanvas/web-components@latest/dist/pwc.mjs"
+    ></script>
+    <link rel="stylesheet" href="src/viewer.css" />
+    <style>
+      @import url("https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=DM+Sans:wght@300;400;500&display=swap");
+    </style>
+  </head>
+
+  <body>
+    <div id="topbar">
+      <a id="back-link" href="index.html">
+        <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5">
+          <path d="M10 3L5 8l5 5" />
+        </svg>
+        一覧に戻る
+      </a>
+      <div id="topbar-title">記念品アーカイブ</div>
+    </div>
+
+    <button id="panel-toggle" title="パネルを開閉">›</button>
+
+    <div id="panel">
+      <span class="panel-category" id="p-category"></span>
+      <div class="panel-name" id="p-name"></div>
+      <div class="panel-divider"></div>
+      <div class="panel-field">
+        <div class="panel-field-label">受賞年</div>
+        <div class="panel-field-value year" id="p-year"></div>
+      </div>
+      <div class="panel-field">
+        <div class="panel-field-label">研究室 / 部門</div>
+        <div class="panel-field-value" id="p-dept"></div>
+      </div>
+      <div class="panel-field">
+        <div class="panel-field-label">大会 / 学会</div>
+        <div class="panel-field-value" id="p-comp"></div>
+      </div>
+      <div class="panel-divider"></div>
+      <div class="panel-field">
+        <div class="panel-field-label">詳細</div>
+        <div class="panel-desc" id="p-desc"></div>
+      </div>
+      <div class="panel-footer">
+        <button class="panel-btn panel-btn-outline">← 前の記念品</button>
+        <button class="panel-btn panel-btn-gold">次の記念品 →</button>
+      </div>
+    </div>
+    <pc-app antialias="false" high-resolution="false">
+      <pc-asset
+        src="https://cdn.jsdelivr.net/npm/playcanvas/scripts/esm/camera-controls.mjs"
+      ></pc-asset>
+      <pc-asset id="toy" src="https://developer.playcanvas.com/assets/toy-cat.sog"></pc-asset>
+      <pc-scene>
+        <pc-entity position="0 0 2.5">
+          <pc-camera clear-color="#0a0c12"></pc-camera>
+          <pc-scripts>
+            <pc-script name="cameraControls"></pc-script>
+          </pc-scripts>
+        </pc-entity>
+        <pc-entity position="-0.3 -0.7 0" rotation="0 0 180">
+          <pc-splat asset="toy"></pc-splat>
+        </pc-entity>
+      </pc-scene>
+    </pc-app>
+  </body>
+  <script type="module" src="/src/viewer.ts"></script>
+</html>

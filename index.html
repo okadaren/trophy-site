@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>trophy-site</title>
+    <link href="src/style.css" rel="stylesheet" />
+  </head>
+
+  <body>
+    <header>
+      <a href="index.html" class="header-logo"> 記念品アーカイブ </a>
+    </header>
+    <div class="layout">
+      <aside id="sidebar">
+        <div class="sidebar-section" id="sidebar-categories">
+          <div class="sidebar-label">カテゴリ</div>
+          <button class="filter-btn active" data-filter="category" data-value="all">
+            <span class="dot"></span>すべて<span class="filter-count" id="cnt-all"></span>
+          </button>
+          <button class="filter-btn" data-filter="category" data-value="flag">
+            <span class="dot"></span>優勝旗・記念旗<span class="filter-count" id="cnt-flag"></span>
+          </button>
+          <button class="filter-btn" data-filter="category" data-value="plaque">
+            <span class="dot"></span>優勝楯<span class="filter-count" id="cnt-plaque"></span>
+          </button>
+          <button class="filter-btn" data-filter="category" data-value="trophy">
+            <span class="dot"></span>優勝杯・トロフィー<span
+              class="filter-count"
+              id="cnt-trophy"
+            ></span>
+          </button>
+          <button class="filter-btn" data-filter="category" data-value="ball">
+            <span class="dot"></span>ウイニングボール<span
+              class="filter-count"
+              id="cnt-ball"
+            ></span>
+          </button>
+          <button class="filter-btn" data-filter="category" data-value="monument">
+            <span class="dot"></span>記念碑<span class="filter-count" id="cnt-monument"></span>
+          </button>
+          <button class="filter-btn" data-filter="category" data-value="certificate">
+            <span class="dot"></span>賞状<span class="filter-count" id="cnt-certificate"></span>
+          </button>
+        </div>
+      </aside>
+      <main>
+        <div class="main-top">
+          <h1 class="page-title">記念品一覧</h1>
+          <div class="result-count" id="result-count"></div>
+        </div>
+        <div class="grid" id="grid"></div>
+      </main>
+    </div>
+    <script type="module" src="/src/main.ts"></script>
+  </body>
+</html>
